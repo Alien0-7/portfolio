@@ -1,32 +1,91 @@
 body {
     margin: 0px;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: linear-gradient(180deg, #237375, #1a5355);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.header, a {
-    font-size: 25px;
-}
 
 .header {
-    position: sticky;
     width: 100%;
+    overflow: hidden;
 }
 
-.header, .menu1 {
-    background: #8801a3;
-    list-style-type: none;
-    text-decoration: none;
-    float: left;
-    display: block;
-    padding-right: 50px;
-    padding-left: 20px;
-    padding-top: 30px;
-
-}
 
 .header ul li img {
     margin-bottom: 50px;
     margin-top: -50px;
     border-radius: 50%;
     border-style: solid;
-    border-color: #000;
+    border-color: #34e718;
+    transition: 0.5s ease;
+}
+
+.header ul li a {
+    font-size: 30px;
+    color: #34e718;
+    transition: color 0.5s ease;
+}
+
+.header ul li a:hover, .header ul li img:hover {
+    font-size: 30px;
+    color: #adfd9f;
+    border-color: #adfd9f;
+}
+
+
+.header, .menu1, .menu2, .menu3 {
+    list-style-type: none;
+    text-decoration: none;
+    float: left;
+    display: block;
+    font-family: "League Spartan";
+    padding-top: 30px; 
+}
+
+.menu1 {
+    padding-right: 50px;
+    padding-left: 20px;
+}
+
+.menu2 {
+    padding-right: 50px;
+}
+
+.menu3 {
+    padding-left: 20px;
+}
+
+.description {
+    display: table;
+    width: 100%; 
+}
+
+.description .left {
+    width: 50%;
+    box-sizing: border-box;
+    float: left;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.description .right{
+    width: 50%;
+    box-sizing: border-box;
+    float: right;
+}
+
+.Projects {
+    padding-top: 5%;
+}
+
+
+.Links {
+    padding-top: 5%;
 }
