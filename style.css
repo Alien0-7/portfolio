@@ -5,7 +5,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background: linear-gradient(180deg, #237375, #1a5355);
+    background: linear-gradient(180deg, #28b5b8, #085557);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -13,7 +13,6 @@ body {
 
 .header {
     width: 100%;
-    overflow: hidden;
 }
 
 
@@ -43,7 +42,6 @@ body {
     list-style-type: none;
     text-decoration: none;
     float: left;
-    display: block;
     font-family: "League Spartan";
     padding-top: 30px; 
 }
@@ -81,11 +79,30 @@ body {
     float: right;
 }
 
-.Projects {
+.projects {
     padding-top: 5%;
 }
 
 
-.Links {
+.links {
     padding-top: 5%;
+    text-align: center;
+}
+
+.links ul {
+    color: #000;
+    list-style-type: none;
+    justify-content: center;
+    display: inline-flex;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.links ul li .discord {
+    padding-right: 100px;
+}
+
+.links ul li .discord :hover {
+    transform: scale(1.1);
 }
