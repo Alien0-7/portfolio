@@ -1,5 +1,7 @@
+
+/*------- Reset "User Agent Stylesheet" format + anti-copy txt + background format -------*/
 body {
-    margin: 0px;
+    margin: 0;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     -moz-user-select: none;
@@ -8,101 +10,203 @@ body {
     background: linear-gradient(180deg, #28b5b8, #085557);
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: futura-pt, sans-serif;
+    font-weight: 600;
 }
 
+ul {
+    margin: auto;
+    padding: 0; /* Reset "User Agent Stylesheet" */
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    border-color: #34e718;
+    border-style: solid;
+    border-right: 0;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-color: #34e718;
+    border-style: solid;
+    border-right: 0;
+}
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-color: #34e718;
+    border-style: solid;
+    border-right: 0;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+
+/*------- Menu options and Header format + font + animation -------*/
 
 .header {
+    padding-top: 50px;
+}
+
+.header ul {
     width: 100%;
+    display: table;
 }
 
-
-.header ul li img {
-    margin-bottom: 50px;
-    margin-top: -50px;
-    border-radius: 50%;
-    border-style: solid;
-    border-color: #34e718;
-    transition: 0.5s ease;
-}
-
-.header ul li a {
-    font-size: 30px;
-    color: #34e718;
-    transition: color 0.5s ease;
-}
-
-.header ul li a:hover, .header ul li img:hover {
-    font-size: 30px;
-    color: #adfd9f;
-    border-color: #adfd9f;
-}
-
-
-.header, .menu1, .menu2, .menu3 {
+.header ul li { /* All the items */
     list-style-type: none;
     text-decoration: none;
     float: left;
-    font-family: "League Spartan";
-    padding-top: 30px; 
+    display: table-cell;
 }
 
+.header ul li:not(.menu2) { /* only text */
+    margin-top: 50px;
+    font-size: 30px;
+    color: #34e718;
+    transition: 0.5s ease;
+    font-family: "League Spartan" !important;
+    font-weight: 500 !important;
+}
+
+
+.header ul li img { /* only img */
+    margin-left: 25px;
+    border-radius: 50%;
+    border: 3px solid #34e718;
+    transition: 0.5s ease;
+}
+
+
+
+.header ul li:not(.menu2):hover, .header ul li img:hover {
+    font-size: 30px;
+    color: #c0ffb5;
+    border-color: #c0ffb5;
+}
+
+
+/*-------Menu items position-------*/
+
 .menu1 {
-    padding-right: 50px;
-    padding-left: 20px;
+    margin-right: 50px;
+    margin-left: 20px;
 }
 
 .menu2 {
-    padding-right: 50px;
+    margin-right: 50px;
 }
 
 .menu3 {
-    padding-left: 20px;
+    margin-left: 20px;
 }
 
+
+/*-------Description position + how displayed -------*/
+
 .description {
+    padding-top: 5%;
     display: table;
-    width: 100%; 
+    width: 100%;
 }
 
 .description .left {
     width: 50%;
-    box-sizing: border-box;
-    float: left;
-    align-items: center;
-    justify-content: center;
     display: flex;
+    justify-content: center;
 }
 
 .description .right{
     width: 50%;
-    box-sizing: border-box;
     float: right;
 }
+
+
+/*-------Project format-------*/
 
 .projects {
     padding-top: 5%;
 }
 
-
-.links {
-    padding-top: 5%;
+.projects ul {
+    list-style-type: none;
     text-align: center;
 }
 
-.links ul {
+.projects ul li {
+    margin: 2%;
+    padding: 2%;
+    padding-bottom: 4%;
+    border-radius: 8%;
+    border: 3px solid black;
+    background-color: white;
+    text-align: center;
+    display: inline-block;
+}
+
+.projects ul li a {
     color: #000;
+    text-decoration: none;
+}
+
+.projects ul .server-minecraft img{
+    border-radius: 8%;
+}
+
+.projects ul .plugin{
+    
+}
+
+
+/*-------Links format-------*/
+
+.links {
+    padding-top: 5%;
+}
+
+.links ul {
     list-style-type: none;
-    justify-content: center;
-    display: inline-flex;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
+    text-align: center;
 }
 
-.links ul li .discord {
-    padding-right: 100px;
+.links ul li {
+    margin: 2%;
+    padding: 2%;
+    padding-bottom: 4%;
+    border-radius: 8%;
+    border: 3px solid black;
+    background-color: white;
+    text-align: center;
+    display: inline-block;
 }
 
-.links ul li .discord :hover {
+/*-------Animation for imgs + padding for icon links-------*/
+
+.links ul li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.links ul .discord img{
+    transition: transform 0.5s;
+}
+
+.links ul .discord img:hover {
+    transform: scale(1.1);
+}
+
+.links ul .github img{
+    transition: transform 0.5s;
+}
+
+.links ul .github img:hover {
     transform: scale(1.1);
 }
