@@ -1,13 +1,18 @@
 
 /*------- Reset "User Agent Stylesheet" format + anti-copy txt + background format -------*/
-body {
+
+* {
+    padding: 0;
     margin: 0;
+}
+
+body {
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background: linear-gradient(180deg, #28b5b8, #085557);
+    background: linear-gradient(180deg, #28b5b8, #014244);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: futura-pt, sans-serif;
@@ -125,8 +130,17 @@ ul {
 }
 
 .description .right{
+    padding-top: 75px;
     width: 50%;
     float: right;
+}
+
+/*--- ----*/
+
+.skills {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
 }
 
 
@@ -147,7 +161,7 @@ ul {
     padding-bottom: 4%;
     border-radius: 8%;
     border: 3px solid black;
-    background-color: white;
+    background-color: #51b5dd;
     text-align: center;
     display: inline-block;
 }
@@ -159,10 +173,6 @@ ul {
 
 .projects ul .server-minecraft img{
     border-radius: 8%;
-}
-
-.projects ul .plugin{
-    
 }
 
 
@@ -180,10 +190,9 @@ ul {
 .links ul li {
     margin: 2%;
     padding: 2%;
-    padding-bottom: 4%;
     border-radius: 8%;
     border: 3px solid black;
-    background-color: white;
+    background-color: #4799b9;
     text-align: center;
     display: inline-block;
 }
