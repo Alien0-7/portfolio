@@ -69,12 +69,16 @@ ul {
 
 .header ul li { /* All the items */
     list-style-type: none;
-    text-decoration: none;
     float: left;
     display: table-cell;
 }
 
-.header ul li:not(.menu2) { /* only text */
+.header ul li a { /* All a */
+    text-decoration: none;
+}
+
+
+.header ul li:not(.menu2) a { /* only text */
     margin-top: 50px;
     font-size: 30px;
     color: #34e718;
@@ -93,7 +97,7 @@ ul {
 
 
 
-.header ul li:not(.menu2):hover, .header ul li img:hover {
+.header ul li:not(.menu2):hover a, .header ul li img:hover {
     font-size: 30px;
     color: #c0ffb5;
     border-color: #c0ffb5;
