@@ -1,13 +1,17 @@
+@font-face {
+    font-family: RetroFont;
+    src: url(RetroscapeIiRegular-KRv7.ttf);
+}
 
-/*------- Reset "User Agent Stylesheet" format + anti-copy txt + background format -------*/
+/*------- Reset "User Agent Stylesheet" format + anti-copy text + background format -------*/
 
 * {
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 body {
-    scroll-behavior: smooth;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
     -moz-user-select: none;
@@ -20,9 +24,14 @@ body {
     font-weight: 600;
 }
 
+a {
+    text-decoration: none;
+}
+
 ul {
     margin: auto;
-    padding: 0; /* Reset "User Agent Stylesheet" */
+    padding: 0;
+    /* Reset "User Agent Stylesheet" */
 }
 
 /* width */
@@ -32,26 +41,26 @@ ul {
     border-style: solid;
     border-right: 0;
 }
-  
-  /* Track */
+
+/* Track */
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-color: #34e718;
     border-style: solid;
     border-right: 0;
 }
-   
-  /* Handle */
+
+/* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: #888;
     border-color: #34e718;
     border-style: solid;
     border-right: 0;
 }
-  
-  /* Handle on hover */
+
+/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+    background: #555;
 }
 
 
@@ -59,7 +68,7 @@ ul {
 /*------- Menu options and Header format + font + animation -------*/
 
 .header {
-    padding-top: 50px;
+    padding-top: 25px;
 }
 
 .header ul {
@@ -67,18 +76,16 @@ ul {
     display: table;
 }
 
-.header ul li { /* All the items */
+.header ul li {
+    /* All the items */
     list-style-type: none;
     float: left;
     display: table-cell;
 }
 
-.header ul li a { /* All a */
-    text-decoration: none;
-}
 
-
-.header ul li:not(.menu2) a { /* only text */
+.header ul li:not(.menu2) a {
+    /* only text */
     margin-top: 50px;
     font-size: 30px;
     color: #34e718;
@@ -88,7 +95,8 @@ ul {
 }
 
 
-.header ul li img { /* only img */
+.header ul li img {
+    /* only img */
     margin-left: 25px;
     border-radius: 50%;
     border: 3px solid #34e718;
@@ -97,7 +105,8 @@ ul {
 
 
 
-.header ul li:not(.menu2):hover a, .header ul li img:hover {
+.header ul li:not(.menu2):hover a,
+.header ul li img:hover {
     font-size: 30px;
     color: #c0ffb5;
     border-color: #c0ffb5;
@@ -107,6 +116,7 @@ ul {
 /*-------Menu items position-------*/
 
 .menu1 {
+    margin-top: 50px;
     margin-right: 50px;
     margin-left: 20px;
 }
@@ -116,6 +126,7 @@ ul {
 }
 
 .menu3 {
+    margin-top: 50px;
     margin-left: 20px;
 }
 
@@ -128,16 +139,22 @@ ul {
     width: 100%;
 }
 
-.description .left {
+.left {
     width: 50%;
     display: flex;
     justify-content: center;
 }
 
-.description .right{
+.right {
     padding-top: 75px;
     width: 50%;
     float: right;
+}
+
+.right span {
+    font-weight: 500;
+    font-size: 25px;
+    font-family: RetroFont;
 }
 
 /*--- ----*/
@@ -161,10 +178,12 @@ ul {
 }
 
 .projects ul li {
+    width: 30%;
     margin: 2%;
-    padding: 2%;
+    padding: 1%;
     padding-bottom: 4%;
-    border-radius: 8%;
+    padding-top: 2%;
+    border-radius: 5%;
     border: 3px solid black;
     background-color: #51b5dd;
     text-align: center;
@@ -178,6 +197,9 @@ ul {
 
 .projects ul .server-minecraft img{
     border-radius: 8%;
+    border: 3px solid black;
+    width: 80%;
+    height: 65%;
 }
 
 
@@ -206,10 +228,9 @@ ul {
 
 .links ul li a {
     color: #000;
-    text-decoration: none;
 }
 
-.links ul .discord img{
+.links ul .discord img {
     transition: transform 0.5s;
 }
 
@@ -217,7 +238,7 @@ ul {
     transform: scale(1.1);
 }
 
-.links ul .github img{
+.links ul .github img {
     transition: transform 0.5s;
 }
 
