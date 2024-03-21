@@ -135,27 +135,40 @@ ul {
 
 .description {
     padding-top: 5%;
-    display: table;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #202020;
 }
 
 .left {
+    padding-left: 10%;
     width: 50%;
-    display: flex;
-    justify-content: center;
+    text-align: left;
+    align-self: center;
 }
 
 .right {
-    padding-top: 75px;
-    width: 50%;
-    float: right;
+    width: 40%;
+    text-align: center;
 }
 
-.right span {
+.myname{
     font-weight: 500;
     font-size: 25px;
     font-family: RetroFont;
 }
+
+.left .fixed-text {
+    align-items: baseline;
+}
+
+.left #typing-text{
+    font-family: "VT323", monospace;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+}
+
 
 /*--- ----*/
 
