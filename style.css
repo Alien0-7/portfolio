@@ -5,6 +5,10 @@
 
 /*------- Reset "User Agent Stylesheet" format + anti-copy text + background format -------*/
 
+:root {
+    --left-width: 25%;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -17,7 +21,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background: linear-gradient(180deg, #28b5b8, #014244);
+    background:rgb(39, 54, 75) ; /*#def2f1*/
     background-size: cover;
     background-repeat: no-repeat;
     font-family: futura-pt, sans-serif;
@@ -28,50 +32,33 @@ a {
     text-decoration: none;
 }
 
+/*
+    --- SCROLLBAR STYLE ---
+*/
+
 ul {
     margin: auto;
     padding: 0;
     /* Reset "User Agent Stylesheet" */
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-    border-color: #34e718;
-    border-style: solid;
-    border-right: 0;
+.second-bg{
+    background: linear-gradient(270deg, #3aafa9, #0a4749); /*#3aafa9*/
+    margin: 100px;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 10px;
+    border: 5px solid #0d5f78;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-color: #34e718;
-    border-style: solid;
-    border-right: 0;
+.second-bg:first-of-type{
+    margin-top: 20px;
 }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-color: #34e718;
-    border-style: solid;
-    border-right: 0;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-
 
 /*------- Menu options and Header format + font + animation -------*/
-
-.header {
-    padding-top: 25px;
-}
-
 .header ul {
+    padding-top: 15px;
+    padding-bottom: 15px;
     width: 100%;
     display: table;
 }
@@ -83,10 +70,13 @@ ul {
     display: table-cell;
 }
 
+.header ul li:first-of-type {
+    margin-bottom: -4px;
+}
+
 
 .header ul li:not(.menu2) a {
     /* only text */
-    margin-top: 50px;
     font-size: 30px;
     color: #34e718;
     transition: 0.5s ease;
@@ -97,13 +87,12 @@ ul {
 
 .header ul li img {
     /* only img */
+    margin-right: 50px;
     margin-left: 25px;
     border-radius: 50%;
     border: 3px solid #34e718;
     transition: 0.5s ease;
 }
-
-
 
 .header ul li:not(.menu2):hover a,
 .header ul li img:hover {
@@ -115,17 +104,16 @@ ul {
 
 /*-------Menu items position-------*/
 
-.menu1 {
+.header ul li:nth-child(2),
+.header ul li:nth-child(3),
+.header ul li:nth-child(4),
+.header ul li:nth-child(5){
     margin-top: 50px;
     margin-right: 50px;
     margin-left: 20px;
 }
 
-.menu2 {
-    margin-right: 50px;
-}
-
-.menu3 {
+.header ul li:nth-child(6) {
     margin-top: 50px;
     margin-left: 20px;
 }
@@ -141,28 +129,29 @@ ul {
 }
 
 .left {
-    padding-left: 10%;
-    width: 50%;
+    max-width: var(--left-width);
+    min-width: 400px;
     text-align: left;
-    align-self: center;
-}
-
-.right {
-    width: 40%;
     text-align: center;
 }
 
-.myname{
-    font-weight: 500;
-    font-size: 25px;
+.left img {
+    border-radius: 10%;
+    border: 2px solid #FFF;
+}
+
+.right {
+    min-width: calc(50% - var(--left-width));
+    width: calc(75% - var(--left-width));
+}
+
+.right .myname{
+    font-weight: 600;
+    font-size: 23px;
     font-family: RetroFont;
 }
 
-.left .fixed-text {
-    align-items: baseline;
-}
-
-.left #typing-text{
+.right #typing-text{
     font-family: "VT323", monospace;
     font-style: normal;
     font-weight: 400;
