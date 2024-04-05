@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Spartan:500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
 <link rel="shortcut icon" href="img/alien.png" />
 
 <head>
@@ -14,6 +13,15 @@
 </head>
 
 <body>
+    
+    <div class="block-display">
+        <h1>Sorry!</h1>
+        <p>This website is not available for devices with a screen width of this type.</p>
+    </div>    
+
+
+
+
     <div class="second-bg">
         <div class="header">
 
@@ -83,6 +91,13 @@
     </div>
 
     <script src="script.js"></script>
-</body>
 
+    <script>
+        window.onload = function() {
+            if (window.innerWidth <= 970) {
+                alert('Questo sito web non è disponibile per dispositivi con una larghezza di schermo di questo tipo.');
+            }
+        }
+    </script>
+</body>
 </html>

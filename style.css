@@ -55,37 +55,63 @@ ul {
     margin-top: 20px;
 }
 
+.second-bg:nth-of-type(2){
+    margin-bottom: 20px !important;
+}
+
 /*------- Menu options and Header format + font + animation -------*/
 .header ul {
     padding-top: 15px;
     padding-bottom: 15px;
     width: 100%;
     display: table;
+    transition: 0.4s all ease;
 }
 
-.header ul li {
+.header li {
     /* All the items */
     list-style-type: none;
     float: left;
     display: table-cell;
 }
 
-.header ul li:first-of-type {
+.header li:first-of-type {
     margin-bottom: -4px;
+} 
+
+.header a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: -3px;
+    left: 0px;
+    background-color: rgb(67, 240, 145);
+    transition-timing-function: ease-out;
+    transition: transform 0.5s;
+    transform-origin: bottom right;
+}
+  
+.header a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
-
-.header ul li:not(.menu2) a {
+.header a {
     /* only text */
     font-size: 30px;
     color: #34e718;
     transition: 0.5s ease;
     font-family: "League Spartan" !important;
     font-weight: 500 !important;
+    position: relative;
+    transition-duration: 0.4s;
+    transition-timing-function: all ease;
 }
 
 
-.header ul li img {
+.header img {
     /* only img */
     margin-right: 50px;
     margin-left: 25px;
@@ -94,8 +120,8 @@ ul {
     transition: 0.5s ease;
 }
 
-.header ul li:not(.menu2):hover a,
-.header ul li img:hover {
+.header a:hover,
+.header img:hover {
     font-size: 30px;
     color: #c0ffb5;
     border-color: #c0ffb5;
@@ -104,16 +130,16 @@ ul {
 
 /*-------Menu items position-------*/
 
-.header ul li:nth-child(2),
-.header ul li:nth-child(3),
-.header ul li:nth-child(4),
-.header ul li:nth-child(5){
+.header li:nth-child(2),
+.header li:nth-child(3),
+.header li:nth-child(4),
+.header li:nth-child(5){
     margin-top: 50px;
     margin-right: 50px;
     margin-left: 20px;
 }
 
-.header ul li:nth-child(6) {
+.header li:nth-child(6) {
     margin-top: 50px;
     margin-left: 20px;
 }
@@ -246,4 +272,35 @@ ul {
 
 .links ul .github img:hover {
     transform: scale(1.1);
+}
+
+
+
+
+.block-display {
+    display: none;
+}
+
+@media screen and (max-width: 970px) {
+    body > *:not(.block-display) {
+        display: none !important;
+    }
+
+    .block-display {
+        display: block !important;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .block-display h1 {
+        color: black;
+        text-shadow: 2px 0 white, -2px 0 white, 0 2px white, 0 -2px white, 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+        font-size: 50px;
+    }
+
+    .block-display p {
+        color: black;
+        text-shadow: 2px 0 white, -2px 0 white, 0 2px white, 0 -2px white, 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+        font-size: 30px;
+    }
 }
