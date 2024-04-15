@@ -3,11 +3,9 @@
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Spartan:500&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-<link rel="shortcut icon" href="img/alien.png" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400&display=swap">
+<link rel="shortcut icon" href="img/small-alien.png" />
 
 <head>
     <meta charset="UTF-8">
@@ -32,8 +30,8 @@
                 <li><img src="img/small-alien.png"></li>
                 <li><a>Alien</a></li>
                 <li><a href="#aboutme">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#links">My Links</a></li>
                 <!--<li class="menu2"><a>Lang:</a></li>-->
             </ul>
@@ -42,7 +40,7 @@
 
 
     <div class="second-bg second">
-        <div class="description" id="aboutme">
+        <div class="aboutme" id="aboutme">
 
 
             <div class="left">
@@ -51,52 +49,95 @@
 
             </div>
 
-            <div class="right">
+            <div class="desc right">
 
-                <h1>Hi, I'm <span class="myname">ALIEN</span> &#x1F44B;</h1>
+                <h1>Hi, I'm <span class="better-font title">ALIEN</span> &#x1F44B;</h1>
                 <p>I'm 16 and i live in Italy &#x1f1ee;&#x1f1f9;</p>
-                <p>Currently High School Student in Padua&#127979;</p>
-                <p class="fixed-text">Passionate about coding and aspiring to become a <span id="typing-text"></span><span id="cursor">&nbsp;</span></p>
+                <p>Currently High School Student in Padua &#127979;</p>
+                <p class="fixed-text">Passionate about coding and aspiring to become a <span id="typing-text" class="better-font paragraph"></span><span id="cursor">&nbsp;</span></p>
+            
+            </div>
+        </div>
+
+        <div id="skills">
+            <h1>Skills</h1>
+
+            <div class="box-container">
+                <div class="box html">
+                    <a href="#"><img src="img/HTML.png">
+                        <h1>HTML5</h1>
+                        <div class="desc">
+                            HTML description skills
+
+                        </div>
+                    </a>
+                </div>
+
+                <div class="box css">
+                    <a href="#"><img src="img/css.png">
+                        <h1>CSS3</h1>
+                        <div class="desc">
+                            CSS description skills
+
+                        </div>
+                    </a>
+                </div>
+
+                <div class="box py">
+                    <a href="#"><img src="img/HTML.png">
+                        <h1>PYTHON</h1>
+                        <div class="desc">
+                            PYTHON description skills
+
+                        </div>
+                    </a>
+                </div>
+
+
+
 
             </div>
         </div>
 
-        <div class="skills" id="skills">
-            <h1>Skills</h1>
-            <table></table>
-        </div>
 
 
-        <div class="projects" id="projects">
+
+        <div id="projects">
             <h1>Projects</h1>
-            <ul>
-                <li class="server-minecraft"><a href="https://minecraft-italia.net/lista/server/universe_mc"
-                        target="_blank"><img src="img/universemc.png" width="550" height="300"><br>
-                        <h1>UniverseMC</h1>UniverseMC is my minecraft server<br>
-                    </a></li>
-            </ul>
+            <div class="box-container">
+
+                <div class="box server-minecraft">
+                    <a href="https://wiki.universemc.it" target="_blank"><img src="img/universemc.png" width="350" height="150">
+                        <div class="desc">
+                            <h1>UniverseMC</h1>
+                            <h4>UniverseMC is my old minecraft server<br></h4>
+                            created by my friends and I.<br>
+                            It had only one big gamemode called <span class="better-font paragraph">TOWNY</span><br>
+                        </div>
+                    </a>
+                    
+                </div>
+
+
+            </div>
         </div>
 
 
-        <div class="links" id="links">
+
+
+        <div id="links">
             <h1>Where you can find me?</h1>
-            <ul>
-                <li class="discord"><a href="https://discordapp.com/users/586166300565307402" target="_blank"> <img
-                            src="img/discord.png" width="75" height="75"><br>Discord</a></li>
-                <li class="github"><a href="https://github.com/alien0-7" target="_blank"> <img src="img/github.png"
-                            width="75" height="75"><br>GitHub</a></li>
-            </ul>
+
+            <div class="box-container">
+                <div class="box discord"><a href="https://discordapp.com/users/586166300565307402" target="_blank"><img src="img/discord.png" width="70px" height="70px"><br>Discord</a></div>
+                <div class="box github"><a href="https://github.com/alien0-7" target="_blank"><img src="img/github.png" width="70px" height="70px"><br>GitHub</a></div>
+            </div>
+
         </div>
+
     </div>
 
-    <script src="script.js"></script>
 
-    <script>
-        window.onload = function() {
-            if (window.innerWidth <= 970) {
-                alert('Questo sito web non è disponibile per dispositivi con una larghezza di schermo di questo tipo.');
-            }
-        }
-    </script>
+<script src="script.js"></script>
 </body>
 </html>

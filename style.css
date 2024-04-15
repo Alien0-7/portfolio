@@ -1,5 +1,5 @@
 @font-face {
-    font-family: RetroFont;
+    font-family: "BetterFont";
     src: url(RetroscapeIiRegular-KRv7.ttf);
 }
 
@@ -39,14 +39,12 @@ a {
 ul {
     margin: auto;
     padding: 0;
-    /* Reset "User Agent Stylesheets" */
 }
 
 .second-bg{
     background: #183D3D; /*#3aafa9*/
-    margin-top: auto;
-    margin-bottom: auto;
-    margin: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
     margin-left: 8%;
     margin-right: 8%;
     border-radius: 10px;
@@ -57,7 +55,9 @@ ul {
     margin-top: 2% !important;
 }
 
-.second-bg .second{
+.second-bg.second{
+    padding-bottom: 5%;
+    padding-top: 5%;
     margin-bottom: 2% !important;
 }
 
@@ -102,7 +102,6 @@ ul {
 
 .header li {
     /* All the items */
-    list-style-type: none;
     float: left;
     display: table-cell;
 }
@@ -178,10 +177,31 @@ ul {
 }
 
 
+/*-------Retro slice font + some other addons -------*/
+
+.better-font{
+    font-family: "BetterFont", "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.better-font.title{
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.better-font.paragraph{
+    font-size: 12px;
+}
+
+.desc {
+    text-align: left;
+}
+
+
 /*-------Description position + how displayed -------*/
 
-.description {
-    padding-top: 5%;
+.aboutme {
     display: flex;
     justify-content: center;
 }
@@ -203,12 +223,6 @@ ul {
     width: calc(75% - var(--left-width));
 }
 
-.right .myname{
-    font-weight: 600;
-    font-size: 23px;
-    font-family: RetroFont;
-}
-
 .right #typing-text{
     font-family: "VT323", monospace;
     font-style: normal;
@@ -221,8 +235,6 @@ ul {
 
 .right #cursor{
     display: inline-block;
-    color: #7AF366;
-    position: relative;
     width: 2px;
     height: 25px;
     right: -2px;
@@ -230,93 +242,90 @@ ul {
 }
 
 
-/*--- ----*/
+/*-------BOX-------*/
 
-.skills {
+.box-container {
     margin-top: 5%;
-    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.box {
+    box-shadow: 10px 10px 5px #040D12;
+    border: 3px solid black;
+    background-color: #5C8374;/*#93B1A6*/
+    border-radius: 5%;
+    padding: 2%;
+}
+
+/*-------Skills format-------*/
+#skills {
+    margin-top: 5%;
     text-align: center;
+    margin-inline: auto;
+    width: 80%;
+}
+
+#skills .box {
+    width: 200px;
 }
 
 /*-------Project format-------*/
 
-.projects {
-    padding-top: 5%;
+#projects {
+    margin-top: 5%;
     text-align: center;
+    margin-inline: auto;
+    width: 80%;
 }
 
-.projects ul {
-    list-style-type: none;
-    text-align: center;
-}
-
-.projects ul li {
-    width: 30%;
-    margin: 2%;
-    padding: 1%;
-    padding-bottom: 4%;
-    padding-top: 2%;
-    border-radius: 5%;
-    border: 3px solid black;
-    background-color: #51b5dd;
-    text-align: center;
-    display: inline-block;
-}
-
-.projects ul li a {
-    color: #000;
-    text-decoration: none;
-}
-
-.projects ul .server-minecraft img{
+.box.server-minecraft img{
     border-radius: 8%;
     border: 3px solid black;
-    width: 80%;
     height: 65%;
 }
 
+#projects .box {
+    width: auto;
+}
 
 /*-------Links format-------*/
 
-.links {
-    padding-top: 5%;
+#links {
+    margin-top: 5%;
     text-align: center;
+    margin-inline: auto;
+    width: 80%;
 }
 
-.links ul {
-    list-style-type: none;
-    text-align: center;
+#links .box-container {
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4%;
 }
 
-.links ul li {
-    margin: 2%;
-    padding: 2%;
-    border-radius: 8%;
-    border: 3px solid black;
-    background-color: #4799b9;
-    text-align: center;
-    display: inline-block;
+#links .box {
+    width: auto;
 }
 
 /*-------Animation for imgs + padding for icon links-------*/
 
-.links ul li a {
-    color: #000;
-}
-
-.links ul .discord img {
+.box.discord img {
     transition: transform 0.5s;
 }
 
-.links ul .discord img:hover {
+.box.discord img:hover {
     transform: scale(1.1);
 }
 
-.links ul .github img {
+.box.github img {
     transition: transform 0.5s;
 }
 
-.links ul .github img:hover {
+.box.github img:hover {
     transform: scale(1.1);
 }
 
@@ -335,18 +344,15 @@ ul {
     .header li:nth-child(3),
     .header li:nth-child(4),
     .header li:nth-child(5){
-        margin-top: calc(var(--height-header-img)/2 - 30%);
+        margin-top: calc(var(--height-header-img)/2 - 25%);
         margin-right: 5%;
         margin-left: 1%;
     }
     
     .header li:nth-child(6) {
-        margin-top: calc(var(--height-header-img)/2 - 30%);
+        margin-top: calc(var(--height-header-img)/2 - 25%);
         margin-left: 1%;
     }
-
-
-
 
 }
 
