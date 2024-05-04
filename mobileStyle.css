@@ -1,0 +1,165 @@
+@media screen and (max-width: 1300px) {
+
+    .desc {
+        font-size: 100%;
+    }
+    
+    #skills .box{
+        max-width: 220px;
+        max-height: 220px;
+        min-height: 170px;
+        min-height: 170px;
+    }
+    
+    #skills .box img{
+        width: 30%;
+        height: 30%;
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    :root {
+        --second-bg-margin: 5%;
+    }
+}
+
+@media screen and (max-width: 1000px) { 
+
+    .desc {
+        font-size: 100%;
+    }
+    
+    #skills .box{
+        max-width: 200px;
+        max-height: 200px;
+        min-height: 150px;
+        min-height: 150px;
+    }
+    
+    #skills .box img{
+        width: 20%;
+        height: 20%;
+        max-width: 45px;
+        max-height: 45px;
+    }
+
+    :root {
+        --second-bg-margin: 3%;
+    }
+
+    .header a {
+        font-size: 27px;
+    }
+
+    .header li:nth-child(2),
+    .header li:nth-child(3),
+    .header li:nth-child(4),
+    .header li:nth-child(5){
+        margin-right: 3%;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+
+    /*ON MOBILE*/
+
+    :root {
+        --height-header-img: 64px;
+        --second-bg-margin: 3%;
+    }
+
+    h1{
+        font-size: 130%;
+    }
+
+    .better-font{
+        font-size: 9px;
+    }
+    
+    .better-font.title{
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+    /*HEADER*/
+    .header a {
+        font-size: 23px;
+    }
+
+    .header li:nth-child(3),
+    .header li:nth-child(4),
+    .header li:nth-child(5),
+    .header li:nth-child(6){
+        display: none;
+    }
+
+    .header li:nth-child(2){
+        margin-top: calc(var(--height-header-img) - 39px);
+    }
+
+    /*ABOUT ME*/
+    .left{
+        display: none;
+    }
+
+    .right {
+        width: 90%;
+    }
+    .right #cursor{
+        display: inline-block;
+        width: 2px;
+        height: 17px;
+        right: -2px;
+        background-color: #7AF366;
+    }
+
+    .desc {
+        font-size: 80%;
+    }
+    
+    /*SKILLS*/
+    #skills .box{
+        max-width: 120px;
+        max-height: 120px;
+        min-height: 70px;
+        min-height: 70px;
+    }
+    
+    #skills {
+        width: 95%;
+    }
+
+    /*PROJECTS*/
+    #projects .server-minecraft img{
+        margin-top: 3%;
+        width: 90%;
+        height: 90%;
+    }
+
+
+
+    /*
+
+    body > *:not(.block-display) {
+        display: none !important;
+    }
+
+    .block-display {
+        display: block !important;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .block-display h1 {
+        color: black;
+        text-shadow: 2px 0 white, -2px 0 white, 0 2px white, 0 -2px white, 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+        font-size: 50px;
+    }
+
+    .block-display p {
+        color: black;
+        text-shadow: 2px 0 white, -2px 0 white, 0 2px white, 0 -2px white, 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+        font-size: 30px;
+    }*/
+}

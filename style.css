@@ -3,16 +3,18 @@
     src: url(RetroscapeIiRegular-KRv7.ttf);
 }
 
+
 /*------- Reset "User Agent Stylesheets" format + anti-copy text + background format -------*/
 
 :root {
     --left-width: 25%;
     --height-header-img: 128px;
     --white-color: #FDFDFD;
+    --second-bg-margin: 8%;
 }
 
 * {
-    padding: 0;
+    padding: 0; 
     margin: 0;
     scroll-behavior: smooth;
     color: var(--white-color);
@@ -45,8 +47,7 @@ ul {
     background: #183D3D; /*#3aafa9*/
     margin-top: 3%;
     margin-bottom: 3%;
-    margin-left: 8%;
-    margin-right: 8%;
+    margin-inline: var(--second-bg-margin);
     border-radius: 10px;
     border: 5px solid #5C8374;
 }
@@ -85,7 +86,6 @@ ul {
 }
 
 
-
 /*------- Menu options and Header format + font + animation -------*/
 
 .header {
@@ -101,7 +101,6 @@ ul {
 }
 
 .header li {
-    /* All the items */
     float: left;
     display: table-cell;
 }
@@ -130,24 +129,25 @@ ul {
 }
 
 .header a {
-    /* only text */
     font-size: 30px;
     color: #34e718;
     transition: 0.5s ease;
-    font-family: "League Spartan" !important;
-    font-weight: 500 !important;
+    font-family: "League Spartan";
+    font-weight: 500;
     position: relative;
     transition-duration: 0.4s;
     transition-timing-function: all ease;
 }
 
+.header li:nth-child(1){
+    margin-right: 4%;
+    margin-left: 2%;
+}
+
 
 .header img {
-    /* only img */
     height: var(--height-header-img);
     width: var(--height-header-img);
-    margin-right: 50px;
-    margin-left: 25px;
     border-radius: 50%;
     border: 3px solid #34e718;
     transition: 0.5s ease;
@@ -165,15 +165,17 @@ ul {
 .header li:nth-child(2),
 .header li:nth-child(3),
 .header li:nth-child(4),
-.header li:nth-child(5){
+.header li:nth-child(5),
+.header li:nth-child(6){
     margin-top: calc(var(--height-header-img) - 78px);
-    margin-right: 5%;
     margin-left: 1%;
 }
 
-.header li:nth-child(6) {
-    margin-top: calc(var(--height-header-img) - 78px);
-    margin-left: 1%;
+.header li:nth-child(2),
+.header li:nth-child(3),
+.header li:nth-child(4),
+.header li:nth-child(5){
+    margin-right: 5%;
 }
 
 
@@ -183,15 +185,12 @@ ul {
     font-family: "BetterFont", "Poppins", sans-serif;
     font-style: normal;
     font-weight: 400;
+    text-transform: uppercase;
 }
 
 .better-font.title{
     font-size: 23px;
-    font-weight: bold;
-}
-
-.better-font.paragraph{
-    font-size: 12px;
+    font-weight: 500;
 }
 
 .desc {
@@ -214,6 +213,8 @@ ul {
 }
 
 .left img {
+    width: 75%;
+    height: 95%;
     border-radius: 10%;
     border: 2px solid #FFF;
 }
@@ -224,19 +225,15 @@ ul {
 }
 
 .right #typing-text{
-    font-family: "VT323", monospace;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 25px;
     position: relative;
     transition-duration: 0.4s;
-    transition-timing-function: all ease;
 }
 
 .right #cursor{
+    position: relative;
     display: inline-block;
     width: 2px;
-    height: 25px;
+    height: 20px;
     right: -2px;
     background-color: #7AF366;
 }
@@ -248,16 +245,20 @@ ul {
     margin-top: 5%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 1em;
+    row-gap: 1em;
 }
 
 .box {
     box-shadow: 10px 10px 5px #040D12;
     border: 3px solid black;
-    background-color: #5C8374;/*#93B1A6*/
+    background-color: #5C8374; /*#93B1A6*/
     border-radius: 5%;
-    padding: 2%;
+    padding: 1%;
 }
+
 
 /*-------Skills format-------*/
 #skills {
@@ -267,9 +268,20 @@ ul {
     width: 80%;
 }
 
-#skills .box {
-    width: 200px;
+#skills .box{
+    max-width: 250px;
+    max-height: 250px;
+    min-height: 200px;
+    min-height: 200px;
 }
+
+#skills .box img{
+    width: 40%;
+    height: 40%;
+    max-width: 90px;
+    max-height: 90px;
+}
+
 
 /*-------Project format-------*/
 
@@ -281,14 +293,15 @@ ul {
 }
 
 .box.server-minecraft img{
+    margin-top: 3%;
+    width: 100%;
+    height: 100%;
+    max-width: 350px;
+    max-height: 200px;
     border-radius: 8%;
     border: 3px solid black;
-    height: 65%;
 }
 
-#projects .box {
-    width: auto;
-}
 
 /*-------Links format-------*/
 
@@ -300,15 +313,7 @@ ul {
 }
 
 #links .box-container {
-    margin-top: 5%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4%;
-}
-
-#links .box {
-    width: auto;
+    column-gap: 2em;
 }
 
 /*-------Animation for imgs + padding for icon links-------*/
@@ -329,58 +334,6 @@ ul {
     transform: scale(1.1);
 }
 
-
-
-
-
-
-@media screen and (max-width: 1120px) {
-
-    :root {
-        --height-header-img: 60%;
-    }
-
-    .header li:nth-child(2),
-    .header li:nth-child(3),
-    .header li:nth-child(4),
-    .header li:nth-child(5){
-        margin-top: calc(var(--height-header-img)/2 - 25%);
-        margin-right: 5%;
-        margin-left: 1%;
-    }
-    
-    .header li:nth-child(6) {
-        margin-top: calc(var(--height-header-img)/2 - 25%);
-        margin-left: 1%;
-    }
-
-}
-
-
 .block-display {
     display: none;
-}
-
-@media screen and (max-width: 970px) {
-    body > *:not(.block-display) {
-        display: none !important;
-    }
-
-    .block-display {
-        display: block !important;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .block-display h1 {
-        color: black;
-        text-shadow: 2px 0 white, -2px 0 white, 0 2px white, 0 -2px white, 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
-        font-size: 50px;
-    }
-
-    .block-display p {
-        color: black;
-        text-shadow: 2px 0 white, -2px 0 white, 0 2px white, 0 -2px white, 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
-        font-size: 30px;
-    }
 }
