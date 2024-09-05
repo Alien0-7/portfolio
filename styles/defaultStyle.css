@@ -7,9 +7,9 @@
 /*------- Reset "User Agent Stylesheets" format + anti-copy text + background format -------*/
 
 :root {
-    --left-width: 25%;
     --height-header-img: 128px;
     --white-color: #FDFDFD;
+    --black-color: #020202;
     --second-bg-margin: 8%;
 }
 
@@ -17,7 +17,7 @@
     padding: 0; 
     margin: 0;
     scroll-behavior: smooth;
-    color: var(--white-color);
+    box-sizing: border-box;
 }
 
 body {
@@ -29,7 +29,6 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background:#040D12 ; /*#def2f1*/
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -41,15 +40,18 @@ a {
 ul {
     margin: auto;
     padding: 0;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
 }
 
 .second-bg{
-    background: #183D3D; /*#3aafa9*/
     margin-top: 3%;
     margin-bottom: 3%;
     margin-inline: var(--second-bg-margin);
     border-radius: 10px;
-    border: 5px solid #5C8374;
 }
 
 .first{
@@ -78,36 +80,25 @@ ul {
     border-radius: 8px;
     border: 4px solid transparent;
     background-clip: content-box;
-    background-color: #888;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
 }
 
 
 /*------- Menu options and Header format + font + animation -------*/
 
 .header {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 .header ul {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    width: 100%;
-    display: table;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 30px;
     transition: 0.4s all ease;
+    width: 80%;
 }
-
-.header li {
-    float: left;
-    display: table-cell;
-}
-
-.header li:first-of-type {
-    margin-bottom: -4px;
-} 
 
 .header a::after{
     content: '';
@@ -117,12 +108,17 @@ ul {
     height: 4px;
     bottom: -6px;
     left: 0;
-    background-color: #7AF366;
     transition-timing-function: ease-out;
     transition: transform 0.5s;
     transform-origin: bottom right;
 }
-  
+
+.header p{
+    font-size: 30px;
+    font-family: "League Spartan";
+    font-weight: 500;
+}
+
 .header a:hover::after{
     transform: scaleX(1);
     transform-origin: bottom left;
@@ -130,7 +126,6 @@ ul {
 
 .header a {
     font-size: 30px;
-    color: #34e718;
     transition: 0.5s ease;
     font-family: "League Spartan";
     font-weight: 500;
@@ -139,45 +134,104 @@ ul {
     transition-timing-function: all ease;
 }
 
-.header li:nth-child(1){
-    margin-right: 4%;
-    margin-left: 2%;
-}
-
-
 .header img {
     height: var(--height-header-img);
     width: var(--height-header-img);
     border-radius: 50%;
-    border: 3px solid #34e718;
     transition: 0.5s ease;
 }
 
-.header a:hover,
-.header img:hover {
-    color: #c0ffb5;
-    border-color: #c0ffb5;
-}
-
-
 /*-------Menu items position-------*/
 
-.header li:nth-child(2),
-.header li:nth-child(3),
-.header li:nth-child(4),
-.header li:nth-child(5),
-.header li:nth-child(6){
-    margin-top: calc(var(--height-header-img) - 78px);
-    margin-left: 1%;
+.header li {
+    display: inline-block;
+    margin-right: 3%;
 }
 
-.header li:nth-child(2),
-.header li:nth-child(3),
-.header li:nth-child(4),
-.header li:nth-child(5){
-    margin-right: 5%;
+.header li:first-child {
+    position: absolute;
+    right: 2%;
+    margin-right: 0%;
 }
 
+/*-------Settings animation and position-------*/
+
+.settings {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.settings-bar1, .settings-bar2, .settings-bar3 {
+    width: 35px;
+    height: 5px;
+    margin-block: 6px;
+    transition: 0.5s;
+}
+  
+.change .settings-bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .settings-bar2 {
+    opacity: 0;
+}
+
+.change .settings-bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+/*-------Settings menu-------*/
+.settings-menu {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: all 0.5s ease-out;
+
+    padding: 0;
+}
+
+.settings-menu.is-open {
+    grid-template-rows: 1fr;
+    padding-block: 20px;
+}
+
+.settings-menu ul {
+    overflow: hidden;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.settings-menu ul li {
+    margin-inline: 20px;
+}
+
+.settings-menu label {
+    font-size: 25px;
+    font-family: "League Spartan";
+    font-weight: 500;
+}
+
+select {
+    border-radius: 5px;
+    appearance: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-size: 12px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+
+.settings-menu button{
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
 
 /*-------Retro slice font + some other addons -------*/
 
@@ -203,25 +257,29 @@ ul {
 .aboutme {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    width: 90%;
 }
 
 .left {
-    max-width: var(--left-width);
+    flex: 1;
     min-width: 400px;
     text-align: left;
-    text-align: center;
 }
 
 .left img {
     width: 75%;
     height: 95%;
     border-radius: 10%;
-    border: 2px solid #FFF;
 }
 
 .right {
-    min-width: calc(50% - var(--left-width));
-    width: calc(75% - var(--left-width));
+    flex: 3;
+}
+
+.right a {
+    text-decoration: underline;
 }
 
 .right #typing-text{
@@ -235,7 +293,6 @@ ul {
     width: 2px;
     height: 20px;
     right: -2px;
-    background-color: #7AF366;
 }
 
 
@@ -244,7 +301,7 @@ ul {
 .box-container {
     margin-top: 5%;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     flex-wrap: wrap;
     justify-content: center;
     column-gap: 1em;
@@ -252,34 +309,46 @@ ul {
 }
 
 .box {
-    box-shadow: 10px 10px 5px #040D12;
-    border: 3px solid black;
-    background-color: #5C8374; /*#93B1A6*/
+    display: flex;
+    flex-direction: column;
     border-radius: 5%;
     padding: 1%;
 }
 
+.box .desc{
+    flex-grow: 1;
+}
+
+.small-box{
+    flex: 0.05;
+    min-width: 100px;
+}
+
+
+.medium-box{
+    flex: 0.2;
+    min-width: 250px;
+}
+
+.big-box{
+    flex: 0.35;
+}
 
 /*-------Skills format-------*/
 #skills {
     margin-top: 5%;
     text-align: center;
     margin-inline: auto;
-    width: 80%;
-}
-
-#skills .box{
-    max-width: 250px;
-    max-height: 250px;
-    min-height: 200px;
-    min-height: 200px;
+    width: 90%;
 }
 
 #skills .box img{
-    width: 40%;
-    height: 40%;
     max-width: 90px;
     max-height: 90px;
+}
+
+#skills .desc a{
+    text-decoration: underline;
 }
 
 
@@ -289,17 +358,18 @@ ul {
     margin-top: 5%;
     text-align: center;
     margin-inline: auto;
-    width: 80%;
+    width: 90%;
 }
 
-.box.server-minecraft img{
+#projects .desc{
+    padding-left: 10px;
+}
+
+#projects .box img{
     margin-top: 3%;
-    width: 100%;
-    height: 100%;
-    max-width: 350px;
-    max-height: 200px;
+    width: 375px;
+    height: 210px;
     border-radius: 8%;
-    border: 3px solid black;
 }
 
 
@@ -309,7 +379,7 @@ ul {
     margin-top: 5%;
     text-align: center;
     margin-inline: auto;
-    width: 80%;
+    width: 90%;
 }
 
 #links .box-container {
@@ -318,19 +388,13 @@ ul {
 
 /*-------Animation for imgs + padding for icon links-------*/
 
-.box.discord img {
+#links .box img{
+    width: 70px;
+    height: 70px;
     transition: transform 0.5s;
 }
 
-.box.discord img:hover {
-    transform: scale(1.1);
-}
-
-.box.github img {
-    transition: transform 0.5s;
-}
-
-.box.github img:hover {
+#links .box img:hover {
     transform: scale(1.1);
 }
 

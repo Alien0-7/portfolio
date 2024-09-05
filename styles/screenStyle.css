@@ -1,0 +1,131 @@
+@media screen and (max-width: 1300px) {
+    :root {
+        --second-bg-margin: 5%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+
+    .box {
+        padding: 2%;
+    }
+
+    :root {
+        --second-bg-margin: 3%;
+    }
+
+    .header a {
+        font-size: 27px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+/*--- ON MOBILE ---*/
+
+    :root {
+        --second-bg-margin: 3%;
+    }
+
+    h1{
+        font-size: 130%;
+    }
+
+    .better-font{
+        font-size: 11px;
+    }
+    
+    .better-font.title{
+        font-size: 17px;
+        font-weight: 300;
+    }
+
+    /*HEADER*/
+    .header a {
+        font-size: 18px;
+    }
+
+    /*ABOUT ME*/
+    .left{
+        display: none;
+    }
+
+    .right #cursor{
+        top: 5px;
+        height: 15px;
+    }
+    
+
+    /*PROJECTS*/
+
+    .big-box{
+        flex: 0.35;
+        min-width: 300px;
+    }
+
+    #projects .box img{
+        width: 267px;
+        height: 150px;
+    }
+
+    .settings-bar1, .settings-bar2, .settings-bar3{
+        width: 25px;
+        margin-block: 3px;
+    }
+
+    .change .settings-bar1 {
+        transform: translate(0, 8px) rotate(-45deg);
+    }
+    
+    .change .settings-bar3 {
+        transform: translate(0, -8px) rotate(45deg);
+    }
+
+
+}
+
+
+@media screen and (max-width: 400px) {
+    /*--- ON MOBILE ---*/
+
+    .desc.right{
+        height: 225px;
+    }
+
+    #skills .box img {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    .medium-box {
+        flex: 0.2;
+        min-width: 200px;
+    }
+
+    .header ul {
+        justify-content: normal;
+        align-items: normal;
+        width: 80%;
+    }
+
+    .header li:nth-child(2){
+        display: none;
+    }
+
+    .header a {
+        font-size: 18px;
+    }
+
+    .big-box{
+        flex: 0.35;
+        min-width: 200px;
+    }
+
+    #projects .box img{
+        width: 134px;
+        height: 75px;
+    }
+    
+}

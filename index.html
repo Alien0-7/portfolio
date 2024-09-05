@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="it">
+<html>
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="mobileStyle.css">
+<link rel="stylesheet" href="styles/darkModeStyle.css" title="theme">
+<link rel="stylesheet" href="styles/defaultStyle.css">
+<link rel="stylesheet" href="styles/screenStyle.css">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Spartan:500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323&display=swap">
@@ -20,22 +21,33 @@
     <div class="block-display">
         <h1>Sorry!</h1>
         <p>This website is not available for devices with a screen width of this type.</p>
-    </div>    
+    </div>
 
 
 
 
     <div class="second-bg first">
+
+        <div id="settings-menu" class="settings-menu collapsed">
+            <ul>
+                <li><label class="lang-dependent" data-key="labelLang">Language:</label>
+                    <select name="languages" id="languages">
+                        <option value="en" selected>🇬🇧 English</option>
+                        <option value="it">🇮🇹 Italiano</option>
+                    </select>
+                </li>
+                <li><button class="lang-dependent" data-key="themeLightButton" id="themeButton" onclick="toggleTheme()">toggle light mode</button></li>
+            </ul>
+        </div>
+
         <div class="header">
 
             <ul>
-                <li><img src="img/small-alien.png"></li>
-                <li><a>Alien</a></li>
+                <li><div onclick="toggleMenu(this)" class="settings"><div class="settings-bar1"></div><div class="settings-bar2"></div><div class="settings-bar3"></div></aì></li>
                 <li><a href="#aboutme">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#links">My Links</a></li>
-                <!--<li class="menu2"><a>Lang:</a></li>-->
             </ul>
         </div>
     </div>
@@ -53,59 +65,55 @@
 
             <div class="desc right">
 
-                <h1>Hi, I'm <span class="better-font title">ALIEN</span> &#x1F44B;</h1>
-                <p>I'm 16 and i live in Italy &#x1f1ee;&#x1f1f9;</p>
-                <p>Currently High School Student in Padua &#127979;</p>
-                <p>Passionate about coding and aspiring to become a <span id="typing-text" class="better-font"></span><span id="cursor">&nbsp;</span></p>
+                <h1 class="lang-dependent" data-key="descTitle">Hi, I'm <span class="better-font title">ALIEN</span> &#x1F44B;</h1>
+                <p class="lang-dependent" data-key="desc1">I'm 17 and i live in Italy &#x1f1ee;&#x1f1f9;</p>
+                <p class="lang-dependent" data-key="desc2">Currently High School Student in Padua &#127979;</p>
+                <p class="lang-dependent" data-key="desc3">Passionate about coding and aspiring to become a <span id="typing-text" class="better-font"></span><span id="cursor">&nbsp;</span></p>
             
             </div>
         </div>
 
         <div id="skills">
-            <h1>Skills</h1>
+            <h1 class="lang-dependent" data-key="skills">Skills</h1>
 
             <div class="box-container">
-                <div class="box html">
-                    <a href="#">
+                <div class="box medium-box html">
+                    <a href="https://en.wikipedia.org/wiki/HTML">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg">
                     </a>
                     <h1>HTML5</h1>
                     <div class="desc">
-                        here i describe what i do with this language
-
+                        <p  class="lang-dependent" data-key="HTMLdesc">I made this <a href="https://github.com/Alien0-7/portfolio" target="_blank">portfolio</a> and other web pages for <a href="https://github.com/Alien0-7/School-projects/tree/main/HTML" target="_blank">school</a>.</p>
                     </div>
                 </div>
 
-                <div class="box css">
-                    <a href="#">
+                <div class="box medium-box css">
+                    <a href="https://en.wikipedia.org/wiki/CSS">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg">
                     </a>
                     <h1>CSS3</h1>
                     <div class="desc">
-                        here i describe what i do with this language
-
+                        <p class="lang-dependent" data-key="CSSdesc">I made the style for this <a href="https://github.com/Alien0-7/portfolio" target="_blank">portfolio</a> and other stylesheet for <a href="https://github.com/Alien0-7/School-projects/tree/main/HTML" target="_blank">school</a>.</p>
                     </div>
                 </div>
 
-                <div class="box py">
-                    <a href="#">
+                <div class="box medium-box py">
+                    <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Python_logo_51.svg">
                     </a>
                     <h1>PYTHON</h1>
                     <div class="desc">
-                        here i describe what i do with this language
-
+                        <p class="lang-dependent" data-key="pythondesc">I tried to use bunch of libraries like: pygame, turtle, tkinter, nextcord, etc. And at <a href="https://github.com/Alien0-7/School-projects/tree/main/Python" target="_blank">school</a> we made some stuff.</p>
                     </div>
                 </div>
 
-                <div class="box java">
-                    <a href="#">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Java-logo.png">
+                <div class="box medium-box java">
+                    <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">
+                        <img src="https://img.icons8.com/?size=256&id=13679&format=png">
                     </a>
                     <h1>JAVA</h1>
                     <div class="desc">
-                        here i describe what i do with this language
-
+                        <p class="lang-dependent" data-key="javadesc">I used java to try to create simple plugins for minecraft and use it at <a href="https://github.com/Alien0-7/School-projects/tree/main/Java" target="_blank">school</a> to learn the basics of OOP.</p>
                     </div>
                 </div>
 
@@ -117,19 +125,26 @@
 
 
         <div id="projects">
-            <h1>Projects</h1>
+            <h1 class="lang-dependent" data-key="projects">Projects</h1>
             <div class="box-container">
                 
-                <div class="box server-minecraft"> <!-- href="https://wiki.universemc.it" target="_blank"  -->
-                    <img src="img/universemc.png">
+                <div class="box big-box server-minecraft">
+                    <a href="https://universemcs-wiki.gitbook.io/wiki-universemc" target="_blank"><img src="img/universemc.png"></a>
                     <div class="desc">
                         <h1>UniverseMC</h1>
-                        <h4>UniverseMC is my old minecraft server<br></h4>
-                        created by my friends and I.<br>
-                        It had only one big gamemode called <span class="better-font paragraph">TOWNY</span><br>
+                        <h4 class="lang-dependent" data-key="UniverseMCdesc1">UniverseMC was my old minecraft server</h4>
+                        <p class="lang-dependent" data-key="UniverseMCdesc2">created by my friends and I. It had only one big gamemode called <span class="better-font paragraph">TOWNY</span>.</p>
                     </div>
                 </div>
 
+                <div class="box big-box telegram-bot">
+                    <a href="https://github.com/Alien0-7/Telegram-bot" target="_blank"><img src="img/telegram.png"></a>
+                    <div class="desc">
+                        <h1>Telegram Bot</h1>
+                        <h4 class="lang-dependent" data-key="TelegramBotdesc1">I created it to practice the PYTHON language.</h4>
+                        <p class="lang-dependent" data-key="TelegramBotdesc2">It includes features like: multi-language, whitelist,fake errors, screen rotation, and link opening.</p>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -138,11 +153,11 @@
 
 
         <div id="links">
-            <h1>Where you can find me?</h1>
+            <h1 class="lang-dependent" data-key="linksTitle">Where you can find me?</h1>
 
             <div class="box-container">
-                <div class="box discord"><a href="https://discordapp.com/users/586166300565307402" target="_blank"><img src="img/discord.png" width="70px" height="70px"><br>Discord</a></div>
-                <div class="box github"><a href="https://github.com/alien0-7" target="_blank"><img src="img/github.png" width="70px" height="70px"><br>GitHub</a></div>
+                <div class="box small-box discord"> <div><a href="https://discordapp.com/users/586166300565307402" target="_blank"><img src="img/discord.png"><br>Discord</a></div> </div>
+                <div class="box small-box github"> <div><a href="https://github.com/alien0-7" target="_blank"><img src="img/github.png"><br>GitHub</a></div> </div>
             </div>
 
         </div>
