@@ -83,7 +83,9 @@
         transform: translate(0, -8px) rotate(45deg);
     }
 
-
+    .popup {
+        margin-left: -400%;
+    }
 }
 
 

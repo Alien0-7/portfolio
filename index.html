@@ -2,7 +2,7 @@
 <html>
 
 <link rel="stylesheet" href="styles/darkModeStyle.css" title="theme">
-<link rel="stylesheet" href="styles/defaultStyle.css">
+<link rel="stylesheet" href="defaultStyle.css">
 <link rel="stylesheet" href="styles/screenStyle.css">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League+Spartan:500&display=swap">
@@ -32,18 +32,18 @@
             <ul>
                 <li><label class="lang-dependent" data-key="labelLang">Language:</label>
                     <select name="languages" id="languages">
-                        <option value="en" selected>🇬🇧 English</option>
+                        <option value="en" selected="selected">🇬🇧 English</option>
                         <option value="it">🇮🇹 Italiano</option>
                     </select>
                 </li>
-                <li><button class="lang-dependent" data-key="themeLightButton" id="themeButton" onclick="toggleTheme()">toggle light mode</button></li>
+                <li><button class="lang-dependent" data-key="themeLightButton" id="themeButton">toggle light mode</button></li>
             </ul>
         </div>
 
         <div class="header">
 
             <ul>
-                <li><div onclick="toggleMenu(this)" class="settings"><div class="settings-bar1"></div><div class="settings-bar2"></div><div class="settings-bar3"></div></aì></li>
+                <li><div class="settings"><div class="settings-bar1"></div><div class="settings-bar2"></div><div class="settings-bar3"></div></aì></li>
                 <li><a href="#aboutme">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -66,7 +66,7 @@
             <div class="desc right">
 
                 <h1 class="lang-dependent" data-key="descTitle">Hi, I'm <span class="better-font title">ALIEN</span> &#x1F44B;</h1>
-                <p class="lang-dependent" data-key="desc1">I'm 17 and i live in Italy &#x1f1ee;&#x1f1f9;</p>
+                <p class="lang-dependent" data-key="desc1">I'm <span id="myage"></span> and i live in Italy &#x1f1ee;&#x1f1f9;</p>
                 <p class="lang-dependent" data-key="desc2">Currently High School Student in Padua &#127979;</p>
                 <p class="lang-dependent" data-key="desc3">Passionate about coding and aspiring to become a <span id="typing-text" class="better-font"></span><span id="cursor">&nbsp;</span></p>
             
@@ -94,6 +94,16 @@
                     <h1>CSS3</h1>
                     <div class="desc">
                         <p class="lang-dependent" data-key="CSSdesc">I made the style for this <a href="https://github.com/Alien0-7/portfolio" target="_blank">portfolio</a> and other stylesheet for <a href="https://github.com/Alien0-7/School-projects/tree/main/HTML" target="_blank">school</a>.</p>
+                    </div>
+                </div>
+
+                <div class="box medium-box js">
+                    <a href="https://en.wikipedia.org/wiki/Javascript">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png">
+                    </a>
+                    <h1>JS</h1>
+                    <div class="desc">
+                        <p  class="lang-dependent" data-key="jsdesc">I wrote the code for this <a href="https://github.com/Alien0-7/portfolio" target="_blank">portfolio</a> and tried to create a Discord bot using discord.js on the Node.js framework.</p>
                     </div>
                 </div>
 
@@ -165,6 +175,6 @@
     </div>
 
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>
