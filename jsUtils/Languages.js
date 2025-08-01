@@ -92,11 +92,10 @@ export const languages = {
 }
 
 export let lang = "en";
-export function LanguageChange(typingText, AgeCalculator) {
+export function LanguageChange(typingText, setYears) {
     const selectLangElement = document.getElementById("languages");
     selectLangElement.addEventListener("change", function (event) {
         lang = event.target.value;
-        const myage =  new AgeCalculator("14 August 2007")
 
         const elements = document.querySelectorAll(".lang-dependent");
 
@@ -113,7 +112,7 @@ export function LanguageChange(typingText, AgeCalculator) {
             }
 
             typingText(languages[lang].words);
-            document.getElementById("myage").innerHTML = Math.floor(myage.getAgeInYears());
+            setYears()
             document.getElementById('myage').removeEventListener('mouseover', agePopup);
             document.getElementById('myage').addEventListener('mouseover', agePopup);
         } else {

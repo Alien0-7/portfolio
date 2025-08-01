@@ -1,6 +1,4 @@
-//import
 import { languages, LanguageChange, lang } from './jsUtils/Languages.js';
-import { AgeCalculator } from './jsUtils/AgeCalculator.js';
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -46,46 +44,52 @@ function agePopup() {
     let popup = document.querySelector(".popup");
 
     function updatePopup() {
-        myage = new AgeCalculator("14 August 2007");
-        const fullAge = myage.getFullAge();
+        let dateFrom = DateTime.fromISO("2007-08-14");
+        let elapsedTime = DateTime.now().diff(dateFrom,[ "years", "months", "days", "hours", "minutes", "seconds" ]).toObject();
 
-        let yearText = `${fullAge.years}`;
-        let monthText = `${fullAge.months}`;
-        let dayText = `${fullAge.days}`;
-        let hourText = `${fullAge.hours}`;
-        let minuteText = `${fullAge.minutes}`;
-        let secondText = `${fullAge.seconds}`;
+        let yearText = `${Math.floor(elapsedTime.years)}`;
+        let monthText = `${Math.floor(elapsedTime.months)}`;
+        let dayText = `${Math.floor(elapsedTime.days)}`;
+        let hourText = `${Math.floor(elapsedTime.hours)}`;
+        let minuteText = `${Math.floor(elapsedTime.minutes)}`;
+        let secondText = `${Math.floor(elapsedTime.seconds)}`;
 
-        if (fullAge.years == 1){
+        if (yearText == "1") {
             yearText += ` ${languages[lang]["popup"]["year"]}`;
         } else {
             yearText += ` ${languages[lang]["popup"]["years"]}`;
         }
-        if (fullAge.months == 1){
+
+        if (monthText == "1") {
             monthText += ` ${languages[lang]["popup"]["month"]}`;
         } else {
             monthText += ` ${languages[lang]["popup"]["months"]}`;
         }
-        if (fullAge.days == 1){
+
+        if (dayText == "1") {
             dayText += ` ${languages[lang]["popup"]["day"]}`;
         } else {
             dayText += ` ${languages[lang]["popup"]["days"]}`;
         }
-        if (fullAge.hours == 1){
+
+        if (hourText == "1") {
             hourText += ` ${languages[lang]["popup"]["hour"]}`;
         } else {
             hourText += ` ${languages[lang]["popup"]["hours"]}`;
         }
-        if (fullAge.minutes == 1){
+
+        if (minuteText == "1") {
             minuteText += ` ${languages[lang]["popup"]["minute"]}`;
         } else {
             minuteText += ` ${languages[lang]["popup"]["minutes"]}`;
         }
-        if (fullAge.seconds == 1){
+
+        if (secondText == "1") {
             secondText += ` ${languages[lang]["popup"]["second"]}`;
         } else {
             secondText += ` ${languages[lang]["popup"]["seconds"]}`;
         }
+
 
         const popuptext = `<span class="popup">${yearText}, ${monthText}, ${dayText}, ${hourText}, ${minuteText}, ${secondText}</span>`;
 
@@ -119,7 +123,6 @@ function agePopup() {
 
 /*------ SETTINGS FUNCTIONS ------*/
 function toggleMenu() {
-    console.log(lang)
 
     const menu = document.getElementById("settings-menu");
 
@@ -156,14 +159,19 @@ function toggleTheme(){
 
 
 //main
+const { DateTime, Interval, Duration } = luxon;
 export { agePopup };
+setYears();
 
-//variables
-let myage = new AgeCalculator("14 August 2007")
-document.getElementById("myage").innerHTML = Math.floor(myage.getAgeInYears())
+function setYears() {
+    let dateFrom = DateTime.fromISO("2007-08-14");
+    let myage = DateTime.now().diff(dateFrom,["years"]).toObject();
+    document.getElementById("myage").innerHTML = Math.floor(myage.years)
+}
+
 //default functions
 typingText(languages["en"].words);
-LanguageChange(typingText, AgeCalculator);
+LanguageChange(typingText, setYears);
 
 
 //All Event Listeners
